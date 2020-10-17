@@ -1,0 +1,7 @@
+nav .collapsible > label {
+  font-size: 0.25rem;
+}
+
+main.paper {
+  min-height: 100vh;
+}

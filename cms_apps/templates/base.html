@@ -1,3 +1,4 @@
+{% load static %}
 {% load static wagtailuserbar %}
 
 <!DOCTYPE html>
@@ -18,17 +19,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {# Global stylesheets #}
+        <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.1/dist/paper.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/cms_apps.css' %}">
-
-        {% block extra_css %}
+       {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
-
-        {% block content %}{% endblock %}
+        <nav class="border fixed split-nav">
+          <div class="nav-brand">
+            <h3><a href="/">Infant Ajay Venus</a></h3>
+          </div>
+          <div class="collapsible">
+            <input id="collapsible1" type="checkbox" name="collapsible1">
+            <label for="collapsible1">
+              <div class="bar1">.</div>
+              <div class="bar2">.</div>
+              <div class="bar3">.</div>
+            </label>
+            <div class="collapsible-body">
+              <ul class="inline">
+                <li><a href="https://github.com/InfantAjayVenus" target="_blank">Github</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <main class="paper">
+          {% block content %}{% endblock %}
+        </main>
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/cms_apps.js' %}"></script>
