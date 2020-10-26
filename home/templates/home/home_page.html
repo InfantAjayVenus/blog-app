@@ -14,7 +14,7 @@
   </article>
   {% if page.get_children %}
   <section class="paper container">
-    {% for post in page.get_children %}
+    {% for post in page.get_children.live %}
         <h4><a href="{% pageurl post %}">{{ post.title }}</a></h4>
     {% endfor %}
  </section>
